@@ -12,7 +12,24 @@
         <Entry Text="{Binding Name, Mode=TwoWay}" />
         <Label Text="{Binding Name}" HorizontalTextAlignment="Center"/>
         -->
-        <ListView x:Name="list1" />
+        <ListView x:Name="list1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Name}" Grid.Column="0" />
+                            <Switch IsToggled="{Binding IsSweet}" Grid.Column="1" />
+                            <Label Text="{Binding Weight, StringFormat='{0:f2} kg'}" Grid.Column="2" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <Button Text="Click me!" Clicked="Button_Clicked" />
     </StackLayout>
 

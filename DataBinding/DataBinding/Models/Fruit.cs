@@ -31,5 +31,37 @@ namespace DataBinding.Models
             }
         }
 
+        private bool isSweet;
+
+        public bool IsSweet
+        {
+            get { return isSweet; }
+            set
+            {
+                if (isSweet != value)
+                {
+                    isSweet = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private double weight;
+
+        public double Weight
+        {
+            get { return weight; }
+            set 
+            {
+                if (weight != value)
+                {
+                    weight = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+
+        public override string ToString() => Name;
     }
 }

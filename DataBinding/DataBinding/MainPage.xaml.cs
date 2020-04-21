@@ -16,17 +16,17 @@ namespace DataBinding
     public partial class MainPage : ContentPage
     {
         private Fruit fruit;
-        private ObservableCollection<string> fruits;
+        private ObservableCollection<Fruit> fruits;
         public MainPage()
         {
             InitializeComponent();
             //fruit = new Fruit { Name = "Apple" };
             //this.BindingContext = fruit;
-            fruits = new ObservableCollection<string>();
-            fruits.Add("Alfa");
-            fruits.Add("Bravo");
-            fruits.Add("Charlie");
-            fruits.Add("Delta");
+            fruits = new ObservableCollection<Fruit>();
+            fruits.Add(new Fruit {Weight = 0.1, Name = "Apple", IsSweet = true });
+            fruits.Add(new Fruit {Weight = 0.2, Name = "Banana", IsSweet = false });
+            fruits.Add(new Fruit {Weight = 0.3, Name = "Cherry", IsSweet = false });
+            fruits.Add(new Fruit {Weight = 0.4, Name = "Durian", IsSweet = true });
 
             list1.ItemsSource = fruits;
         }
@@ -35,7 +35,7 @@ namespace DataBinding
         {
             //fruit.Name = "Banana";
             //list1.ItemsSource = new string[] { "Alfa", "Bravo", "Charlie", "Delta" };
-            fruits.Add("Echo");
+            fruits.Add(new Fruit { Name = "Ebanana", IsSweet = true, Weight = 0.5 });
         }
     }
 }
